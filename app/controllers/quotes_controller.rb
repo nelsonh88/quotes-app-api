@@ -1,4 +1,4 @@
-class QuotesController < ApplicationController
+class QuotesController < ProtectedController
   before_action :set_quote, only: [:show, :update, :destroy]
 
   # GET /quotes
@@ -15,7 +15,8 @@ class QuotesController < ApplicationController
 
   # POST /quotes
   def create
-    @quote = Quote.new(quote_params)
+    @quote = current_user.quotes.build(quote_params)
+    # @quote = Quote.new(quote_params)
 
     if @quote.save
       render json: @quote, status: :created, location: @quote
@@ -41,7 +42,8 @@ class QuotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quote
-      @quote = Quote.find(params[:id])
+      @quote = current_user.quotes.find(params[:id])
+      # @quote = Quote.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

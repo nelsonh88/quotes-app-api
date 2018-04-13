@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   post '/sign-in' => 'users#signin'
   delete '/sign-out' => 'users#signout'
   patch '/change-password' => 'users#changepw'
+
+  post '/quotes/' => 'quotes#create'
+  get '/quotes/:id' => 'quotes#show'
+  get '/quotes' => 'quotes#index'
+  patch '/quotes/:id' => 'quotes#update'
+  delete '/quotes/:id' => 'quotes#destroy'
 end
