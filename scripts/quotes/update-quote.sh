@@ -8,7 +8,7 @@ curl "${API}${URL_PATH}" \
   --data '{
     "quote": {
       "title": "'"${TITLE}"'",
-      "text": "'"${TEXT}"'",
+      "quote": "'"${QUOTE}"'",
       "author": "'"${AUTHOR}"'"
     }
   }'

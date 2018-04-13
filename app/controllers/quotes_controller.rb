@@ -1,4 +1,4 @@
-class QuotesController < ProtectedController
+class QuotesController < OpenReadController
   before_action :set_quote, only: [:show, :update, :destroy]
 
   # GET /quotes
@@ -48,6 +48,6 @@ class QuotesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def quote_params
-      params.require(:quote).permit(:title, :text, :author, :user_id)
+      params.require(:quote).permit(:title, :quote, :author, :user_id)
     end
 end
