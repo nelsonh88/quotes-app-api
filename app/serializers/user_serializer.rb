@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email, :quotes
+  attributes :id, :email, :first_name, :last_name, :quotes
 end
