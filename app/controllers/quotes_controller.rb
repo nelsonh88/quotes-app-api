@@ -1,9 +1,10 @@
-class QuotesController < OpenReadController
+class QuotesController < ProtectedController
   before_action :set_quote, only: [:show, :update, :destroy]
 
   # GET /quotes
   def index
-    @quotes = Quote.all
+    @quotes = current_user.quotes.all
+    # @quotes = Quote.all
 
     render json: @quotes
   end
