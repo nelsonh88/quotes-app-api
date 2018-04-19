@@ -7,7 +7,6 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=${TOKEN}"\
   --data '{
     "quote": {
-      "title": "'"${TITLE}"'",
       "quote": "'"${QUOTE}"'",
       "author": "'"${AUTHOR}"'"
     }

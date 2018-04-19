@@ -1,4 +1,4 @@
 class QuoteSerializer < ActiveModel::Serializer
-  attributes :id, :title, :quote, :author
+  attributes :id, :quote, :author
   has_one :user
 end
